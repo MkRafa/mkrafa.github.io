@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mann Khivasara</title>
+<meta name="description" content="Mann Khivasara, Senior AI Product Manager. I ship agentic AI products across healthcare, contact centres and customer experience.">
+<meta property="og:title" content="Mann Khivasara · Senior AI Product Manager">
+<meta property="og:description" content="Agentic AI products that can be checked, not just trusted. RagaAI · Sprinklr · IE MBA · IIT Hyderabad.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mkrafa.github.io/">
+<meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0e11" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23ff5a36'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='700' text-anchor='middle' fill='white'%3EMK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+  // Apply saved theme before paint to avoid a flash.
+  try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+<style>
+  :root {
+    --bg: #f6f4ef;
+    --bg-alt: #eeebe3;
+    --surface: #ffffff;
+    --ink: #15161a;
+    --ink-2: #4a4b52;
+    --ink-3: #7c7d84;
+    --line: #dedad0;
+    --accent: #ff5a36;
+    --accent-ink: #d8431f;
+    --accent-soft: #ffe4dc;
+    --shadow: 0 1px 2px rgba(20,20,20,.04), 0 8px 24px rgba(20,20,20,.06);
+    --radius: 18px;
+    --maxw: 1120px;
+    --sans: "Inter Tight", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --serif: "Instrument Serif", Georgia, serif;
+    --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0d0e11; --bg-alt: #13151a; --surface: #171920; --ink: #eeece6; --ink-2: #b4b3ad; --ink-3: #85858a;
+      --line: #262932; --accent: #ff6a47; --accent-ink: #ff8a6d; --accent-soft: #3a1c14;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25); color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d0e11; --bg-alt: #13151a; --surface: #171920; --ink: #eeece6; --ink-2: #b4b3ad; --ink-3: #85858a;
+    --line: #262932; --accent: #ff6a47; --accent-ink: #ff8a6d; --accent-soft: #3a1c14;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25); color-scheme: dark;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--sans); font-size: 17px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    transition: background-color .3s, color .3s;
+  }
+  a { color: inherit; }
+  img, svg { display: block; }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+  .mono { font-family: var(--mono); font-size: 12.5px; letter-spacing: .04em; text-transform: uppercase; }
+  .serif { font-family: var(--serif); font-weight: 400; font-style: italic; letter-spacing: -.01em; }
+  ::selection { background: var(--accent); color: #fff; }
+
+  /* Nav */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter: saturate(160%) blur(14px); -webkit-backdrop-filter: saturate(160%) blur(14px);
+    border-bottom: 1px solid transparent; transition: border-color .3s;
+  }
+  .nav.scrolled { border-bottom-color: var(--line); }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 600; letter-spacing: -.01em; }
+  .logo-mark { width: 32px; height: 32px; border-radius: 9px; background: var(--accent); color: #fff; display: grid; place-items: center; font-size: 13px; font-weight: 700; }
+  .nav-links { display: flex; align-items: center; gap: 6px; }
+  .nav-links a { text-decoration: none; font-size: 15px; color: var(--ink-2); padding: 8px 12px; border-radius: 999px; transition: color .2s, background .2s; }
+  .nav-links a:hover { color: var(--ink); background: var(--bg-alt); }
+  .theme-btn {
+    width: 38px; height: 38px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface);
+    color: var(--ink); display: grid; place-items: center; cursor: pointer; margin-left: 6px; transition: transform .2s;
+  }
+  .theme-btn:hover { transform: rotate(-15deg); }
+  .theme-btn .sun { display: none; }
+  :root[data-theme="dark"] .theme-btn .sun { display: block; }
+  :root[data-theme="dark"] .theme-btn .moon { display: none; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .theme-btn .sun { display: block; }
+    :root:not([data-theme="light"]) .theme-btn .moon { display: none; }
+  }
+
+  /* Hero */
+  .hero { padding: 88px 0 72px; position: relative; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; inset: -40% -10% auto auto; width: 720px; height: 720px; border-radius: 50%;
+    background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%);
+    filter: blur(20px); pointer-events: none; z-index: 0;
+  }
+  .hero .wrap { position: relative; z-index: 1; display: grid; grid-template-columns: 1.35fr .9fr; gap: 56px; align-items: end; }
+  .status { display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px 7px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink-2); }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 0 4px color-mix(in srgb, #22c55e 22%, transparent); }
+  h1 { font-size: clamp(44px, 7vw, 84px); line-height: 1.02; letter-spacing: -.035em; font-weight: 600; margin: 26px 0 24px; }
+  h1 .serif { color: var(--accent); font-size: 1.08em; }
+  .lede { font-size: 20px; color: var(--ink-2); max-width: 580px; margin: 0 0 34px; }
+  .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 999px;
+    text-decoration: none; font-weight: 500; font-size: 16px; transition: transform .2s, background .2s, border-color .2s;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: var(--ink); color: var(--bg); }
+  .btn-ghost { border: 1px solid var(--line); background: var(--surface); }
+  .btn-ghost:hover { border-color: var(--ink-3); }
+  .btn svg { width: 18px; height: 18px; }
+
+  .id-card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 28px; box-shadow: var(--shadow);
+  }
+  .avatar { width: 64px; height: 64px; border-radius: 18px; background: linear-gradient(135deg, var(--accent), #ffb347); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 22px; margin-bottom: 18px; }
+  .id-card h2 { font-size: 22px; margin: 0; letter-spacing: -.02em; }
+  .id-card .role { color: var(--ink-3); margin: 2px 0 20px; font-size: 15px; }
+  .id-rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .id-rows li { display: grid; grid-template-columns: 76px 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+  .id-rows li:last-child { border-bottom: 0; padding-bottom: 0; }
+  .id-rows .mono { color: var(--ink-3); font-size: 11px; padding-top: 3px; }
+
+  /* Stats */
+  .stats { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg-alt); }
+  .stats .wrap { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .stat { padding: 36px 24px; border-left: 1px solid var(--line); }
+  .stat:first-child { border-left: 0; padding-left: 0; }
+  .stat .num { font-size: clamp(34px, 4.4vw, 52px); font-weight: 600; letter-spacing: -.04em; line-height: 1; }
+  .stat .num .unit { color: var(--accent); }
+  .stat p { margin: 12px 0 0; color: var(--ink-2); font-size: 15px; line-height: 1.45; }
+
+  /* Sections */
+  section.block { padding: 104px 0; }
+  .sec-head { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; margin-bottom: 52px; align-items: end; }
+  .sec-head .mono { color: var(--accent-ink); display: block; margin-bottom: 14px; }
+  h2.title { font-size: clamp(34px, 4.6vw, 56px); line-height: 1.05; letter-spacing: -.035em; font-weight: 600; margin: 0; }
+  h2.title .serif { color: var(--ink-2); }
+  .sec-head p { color: var(--ink-2); margin: 0; font-size: 18px; max-width: 520px; }
+
+  /* Impact */
+  .impact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; box-shadow: var(--shadow); }
+  .panel-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+  .panel h3 { font-size: 24px; margin: 0; letter-spacing: -.02em; }
+  .panel .mono { color: var(--ink-3); font-size: 11px; }
+  .panel .sub { color: var(--ink-3); margin: 0 0 22px; font-size: 15px; }
+  .wins { list-style: none; padding: 0; margin: 0; }
+  .wins li { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 16px 0; border-top: 1px solid var(--line); }
+  .wins b { font-size: 22px; letter-spacing: -.03em; font-weight: 600; color: var(--accent-ink); line-height: 1.2; }
+  .wins span { color: var(--ink-2); font-size: 15.5px; line-height: 1.5; }
+
+  /* Principles */
+  .principles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .principle { padding: 28px 24px; border-radius: var(--radius); border: 1px solid var(--line); background: var(--surface); transition: transform .25s, border-color .25s; }
+  .principle:hover { transform: translateY(-4px); border-color: var(--accent); }
+  .principle .n { font-family: var(--serif); font-style: italic; font-size: 40px; color: var(--accent); line-height: 1; }
+  .principle h3 { font-size: 19px; margin: 18px 0 10px; letter-spacing: -.015em; line-height: 1.25; }
+  .principle p { color: var(--ink-2); margin: 0; font-size: 15px; line-height: 1.55; }
+
+  /* Builds */
+  .builds { display: grid; gap: 20px; }
+  .build {
+    display: grid; grid-template-columns: 1fr 1.6fr; gap: 40px; padding: 36px; border-radius: 22px;
+    background: var(--surface); border: 1px solid var(--line); text-decoration: none; box-shadow: var(--shadow);
+    transition: transform .25s, border-color .25s;
+  }
+  .build:hover { transform: translateY(-3px); border-color: var(--ink-3); }
+  .build:hover .arrow { transform: translate(3px, -3px); color: var(--accent); }
+  .build .idx { color: var(--ink-3); }
+  .build h3 { font-size: 28px; letter-spacing: -.03em; line-height: 1.1; margin: 12px 0 16px; display: flex; gap: 10px; align-items: flex-start; }
+  .arrow { width: 22px; height: 22px; flex: none; margin-top: 4px; transition: transform .25s, color .25s; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: var(--mono); font-size: 12px; padding: 5px 10px; border-radius: 999px; background: var(--bg-alt); color: var(--ink-2); border: 1px solid var(--line); }
+  .build dl { margin: 0; display: grid; gap: 16px; }
+  .build dt { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 4px; }
+  .build dd { margin: 0; color: var(--ink-2); font-size: 16px; }
+  .build dd.result { color: var(--ink); font-weight: 500; }
+  .more { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .mini { padding: 22px 24px; border-radius: var(--radius); border: 1px dashed var(--line); text-decoration: none; transition: border-color .2s; }
+  a.mini:hover { border-color: var(--ink-3); }
+  .mini h4 { margin: 0 0 6px; font-size: 17px; letter-spacing: -.01em; }
+  .mini p { margin: 0; color: var(--ink-2); font-size: 14.5px; line-height: 1.5; }
+
+  /* Career */
+  .timeline { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .timeline li { display: grid; grid-template-columns: 200px 1fr 1.3fr; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--line); align-items: baseline; transition: padding .25s; }
+  .timeline li:hover { padding-left: 12px; }
+  .timeline .when { color: var(--ink-3); }
+  .timeline .org { font-weight: 600; font-size: 19px; letter-spacing: -.015em; }
+  .timeline .org small { display: block; font-weight: 400; font-size: 14px; color: var(--ink-3); letter-spacing: 0; }
+  .timeline .what { color: var(--ink-2); }
+  .timeline .edu .org::after { content: "Education"; margin-left: 10px; font-family: var(--mono); font-size: 10.5px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--accent-ink); background: var(--accent-soft); padding: 3px 8px; border-radius: 999px; vertical-align: 3px; }
+
+  /* Toolkit */
+  .toolkit { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .toolkit .panel h3 { font-size: 20px; margin-bottom: 18px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { font-size: 14.5px; padding: 7px 13px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); color: var(--ink-2); }
+
+  /* Contact */
+  .contact { padding: 120px 0; text-align: center; background: var(--ink); color: var(--bg); position: relative; overflow: hidden; }
+  .contact::before {
+    content: ""; position: absolute; left: 50%; top: 100%; width: 900px; height: 600px; transform: translate(-50%, -50%);
+    background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 45%, transparent), transparent); pointer-events: none;
+  }
+  .contact .wrap { position: relative; }
+  .contact .mono { color: var(--accent); }
+  .contact h2 { font-size: clamp(40px, 7vw, 88px); line-height: 1; letter-spacing: -.04em; font-weight: 600; margin: 20px auto 22px; max-width: 900px; }
+  .contact h2 .serif { color: var(--accent); }
+  .contact p { color: color-mix(in srgb, var(--bg) 70%, transparent); font-size: 19px; margin: 0 auto 38px; max-width: 520px; }
+  .contact .ctas { justify-content: center; }
+  .contact .btn-primary { background: var(--accent); color: #fff; }
+  .contact .btn-ghost { background: transparent; color: var(--bg); border-color: color-mix(in srgb, var(--bg) 25%, transparent); }
+  .contact .btn-ghost:hover { border-color: var(--bg); }
+  footer { background: var(--ink); color: color-mix(in srgb, var(--bg) 55%, transparent); border-top: 1px solid color-mix(in srgb, var(--bg) 12%, transparent); }
+  footer .wrap { display: flex; justify-content: space-between; gap: 16px; padding-top: 24px; padding-bottom: 24px; font-size: 14px; flex-wrap: wrap; }
+
+  /* Reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    *, *::before, *::after { transition-duration: 0s !important; }
+  }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .hero .wrap, .sec-head, .impact-grid, .build { grid-template-columns: 1fr; }
+    .hero .wrap { gap: 40px; }
+    .sec-head { gap: 16px; }
+    .principles { grid-template-columns: 1fr 1fr; }
+    .stats .wrap { grid-template-columns: 1fr 1fr; }
+    .stat:nth-child(3) { border-left: 0; padding-left: 0; }
+    .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+    .toolkit, .more { grid-template-columns: 1fr; }
+    .timeline li { grid-template-columns: 1fr; gap: 4px; }
+    .build { gap: 24px; }
+  }
+  @media (max-width: 720px) {
+    .nav-links a { display: none; }
+  }
+  @media (max-width: 560px) {
+    .wrap { padding: 0 16px; }
+    body { font-size: 16px; }
+    .hero { padding: 56px 0 56px; }
+    .lede { font-size: 18px; }
+    section.block { padding: 72px 0; }
+    .principles { grid-template-columns: 1fr; }
+    .stat { padding: 26px 14px; }
+    .stat:nth-child(odd) { padding-left: 0; }
+    .panel, .build { padding: 24px; }
+    .wins li { grid-template-columns: 1fr; gap: 4px; }
+    .contact { padding: 88px 0; }
+    .btn { padding: 13px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Mann Khivasara, home"><span class="logo-mark">MK</span><span>Mann Khivasara</span></a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#impact">Impact</a>
+      <a href="#approach">Approach</a>
+      <a href="#builds">Builds</a>
+      <a href="#career">Career</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">
+        <svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="status mono"><span class="dot"></span>Senior AI PM · Bengaluru, India</span>
+        <h1>I turn agentic AI into products people can <span class="serif">trust.</span></h1>
+        <p class="lede">I ship AI-powered enterprise products across healthcare, contact centres and customer experience. My bar: outputs that can be checked, not just trusted. Every claim cited, every decision traceable.</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href="#impact">See my impact
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></a>
+          <a class="btn btn-ghost" href="https://linkedin.com/in/mann-khivasara" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn</a>
+        </div>
+      </div>
+
+      <aside class="id-card reveal" aria-label="Summary">
+        <div class="avatar">MK</div>
+        <h2>Mann Khivasara</h2>
+        <p class="role">Senior AI Product Manager</p>
+        <ul class="id-rows">
+          <li><span class="mono">Now</span><span><b>RagaAI</b>: agentic AI platform for healthcare automation</span></li>
+          <li><span class="mono">Before</span><span><b>Sprinklr</b> (NYSE: CXM), Analyst → PM Lead</span></li>
+          <li><span class="mono">Study</span><span>International MBA, <b>IE Business School</b> · B.Tech, <b>IIT Hyderabad</b></span></li>
+          <li><span class="mono">Speaks</span><span>English · Hindi · Marathi</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <div class="stats">
+    <div class="wrap">
+      <div class="stat reveal"><div class="num"><span class="unit">$</span>4M</div><p>saved per clinical trial with a hybrid RPA + LLM + OCR pipeline</p></div>
+      <div class="stat reveal"><div class="num">3d<span class="unit">→</span>4h</div><p>insurance verification turnaround, at 95%+ accuracy</p></div>
+      <div class="stat reveal"><div class="num">96<span class="unit">%</span></div><p>retention across 45 enterprise clients, incl. Microsoft</p></div>
+      <div class="stat reveal"><div class="num">30<span class="unit">+</span></div><p>person squad led across engineering, AI science, QA and CS</p></div>
+    </div>
+  </div>
+
+  <section class="block" id="impact">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><span class="mono">01 / Impact</span><h2 class="title">Outcomes, <span class="serif">not features.</span></h2></div>
+        <p>Five years shipping AI into regulated healthcare workflows and enterprise contact centres, measured against the KPIs customers actually pay for.</p>
+      </div>
+      <div class="impact-grid">
+        <article class="panel reveal">
+          <div class="panel-top"><h3>RagaAI</h3><span class="mono">Jan 2026 – now</span></div>
+          <p class="sub">Senior Product Manager · Healthcare automation</p>
+          <ul class="wins">
+            <li><b>$4M</b><span>saved per clinical trial: RPA where no API existed, LLMs for eligibility pre-screening, OCR for unstructured documents</span></li>
+            <li><b>3d → 4h</b><span>insurance verification by chaining OCR → LLM reasoning over payer policy documents</span></li>
+            <li><b>−40%</b><span>appointment scheduling time with real-time voice and chat agents, at 95%+ data-entry accuracy</span></li>
+            <li><b>30+</b><span>person squad; I own the roadmap, PRDs and solution architecture for each use case</span></li>
+          </ul>
+        </article>
+        <article class="panel reveal">
+          <div class="panel-top"><h3>Sprinklr</h3><span class="mono">2021 – 2024</span></div>
+          <p class="sub">Product Analyst → Product Manager – Lead · CX &amp; contact centre AI</p>
+          <ul class="wins">
+            <li><b>14</b><span>AI enhancements shipped (agent assist, smart replies, sentiment-aware routing), driving 25% adoption and 96% retention</span></li>
+            <li><b>+23%</b><span>CSAT and 35% of calls deflected with Voice AI and IVR automation</span></li>
+            <li><b>$800K</b><span>upsell closed on-site in Dubai, plus a 30% consumption increase</span></li>
+            <li><b>−30%</b><span>client onboarding time with vertical playbooks; 9,000 new users activated in-app</span></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="approach" style="background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><span class="mono">02 / Approach</span><h2 class="title">How I <span class="serif">work.</span></h2></div>
+        <p>A PM who prototypes. I get close enough to the models to know where they break, then design the product around it.</p>
+      </div>
+      <div class="principles">
+        <div class="principle reveal"><div class="n">i.</div><h3>Prioritise by value vs effort</h3><p>Write the PRD and define the solution architecture for every use case before a sprint starts.</p></div>
+        <div class="principle reveal"><div class="n">ii.</div><h3>Prototype before handoff</h3><p>I build agent flows in Claude and Lovable to stress-test edge cases, so AI scientists get a concrete spec.</p></div>
+        <div class="principle reveal"><div class="n">iii.</div><h3>LLMs only where judgment is needed</h3><p>Everything else stays deterministic, which keeps latency, cost and auditability under control.</p></div>
+        <div class="principle reveal"><div class="n">iv.</div><h3>Tie AI to business KPIs</h3><p>CSAT, AHT, retention, adoption. Every feature is reviewed with customers against a number.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="builds">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><span class="mono">03 / Builds</span><h2 class="title">Hands-on <span class="serif">builds.</span></h2></div>
+        <p>I prototype to pressure-test product ideas before they reach a roadmap. These are where I work out what "good" looks like and how to measure it.</p>
+      </div>
+      <div class="builds">
+        <a class="build reveal" href="https://github.com/MkRafa/agentic-rag-coverage-determination" target="_blank" rel="noopener">
+          <div>
+            <span class="mono idx">Healthcare · Agentic RAG</span>
+            <h3>Coverage Determination Agent <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
+            <div class="tags"><span class="tag">Agentic RAG</span><span class="tag">MCP</span><span class="tag">152-case evals</span></div>
+          </div>
+          <dl>
+            <div><dt>Problem</dt><dd>Coverage questions ("is procedure C covered for condition D under plan L on date T?") need an answer <em>and</em> the policy clause that proves it.</dd></div>
+            <div><dt>Approach</dt><dd>An agent retrieves and cites policy clauses, a verifier re-checks every citation, and a rules-based gate decides whether to answer, escalate to a human, or refuse.</dd></div>
+            <div><dt>Principle</dt><dd class="result">The models reason, but they never make the final call.</dd></div>
+          </dl>
+        </a>
+        <a class="build reveal" href="https://github.com/MkRafa/resume-agent" target="_blank" rel="noopener">
+          <div>
+            <span class="mono idx">Careers · LLM evaluation</span>
+            <h3>resume-agent <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
+            <div class="tags"><span class="tag">LangGraph</span><span class="tag">Hallucination detection</span><span class="tag">Gold-set evals</span></div>
+          </div>
+          <dl>
+            <div><dt>Problem</dt><dd>Candidates can't tell if they fit a role, and AI-written resumes invent things.</dd></div>
+            <div><dt>Approach</dt><dd>Grade the candidate against each requirement with cited evidence, then write a tailored resume where every claim traces back to a real fact.</dd></div>
+            <div><dt>Results</dt><dd class="result">82% agreement with human labels, 0 over-generous verdicts, and 0 of 12 planted fabrications missed.</dd></div>
+          </dl>
+        </a>
+        <a class="build reveal" href="https://github.com/MkRafa/ct-prescreening" target="_blank" rel="noopener">
+          <div>
+            <span class="mono idx">Clinical trials · Extraction</span>
+            <h3>Clinical Trial Pre-Screening <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
+            <div class="tags"><span class="tag">Healthcare AI</span><span class="tag">Document extraction</span></div>
+          </div>
+          <dl>
+            <div><dt>Problem</dt><dd>Coordinators manually screen patient notes against long inclusion/exclusion criteria.</dd></div>
+            <div><dt>Approach</dt><dd>The LLM judges each criterion with evidence; the final eligibility decision is plain code.</dd></div>
+            <div><dt>Principle</dt><dd class="result">Auditable by design: every verdict shows the evidence behind it.</dd></div>
+          </dl>
+        </a>
+      </div>
+      <div class="more">
+        <div class="mini reveal"><h4>ElderEase</h4><p>Senior-services marketplace from IE Venture Lab. Led the MVP, ran 40+ discovery interviews, pitched to investors.</p></div>
+        <a class="mini reveal" href="https://github.com/MkRafa/AI_LangGraph" target="_blank" rel="noopener"><h4>Email Support Agent ↗</h4><p>Classifies support emails, drafts replies, and routes to human approval with LangGraph.</p></a>
+        <a class="mini reveal" href="https://github.com/MkRafa/appointments" target="_blank" rel="noopener"><h4>Clinic Appointments ↗</h4><p>The booking flow behind my clinic voice-agent experiments.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="career" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><span class="mono">04 / Career</span><h2 class="title">The <span class="serif">path.</span></h2></div>
+        <p>From mechanical engineering to enterprise CX to healthcare AI, with an MBA in Madrid along the way.</p>
+      </div>
+      <ol class="timeline">
+        <li class="reveal"><span class="mono when">Jan 2026 – Now</span><span class="org">RagaAI<small>Bengaluru</small></span><span class="what">Senior Product Manager · agentic AI for healthcare automation</span></li>
+        <li class="reveal edu"><span class="mono when">Sep 2024 – Dec 2025</span><span class="org">IE Business School<small>Madrid, Spain</small></span><span class="what">International MBA · IE Masters Scholarship · Tech &amp; Innovation Club events head</span></li>
+        <li class="reveal"><span class="mono when">Apr 2023 – May 2024</span><span class="org">Sprinklr<small>Bengaluru</small></span><span class="what">Product Manager – Lead · team of 13, 45 enterprise clients across the Americas</span></li>
+        <li class="reveal"><span class="mono when">Apr 2022 – Mar 2023</span><span class="org">Sprinklr</span><span class="what">Senior Product Consultant · recommendation engines, omnichannel routing</span></li>
+        <li class="reveal"><span class="mono when">Jun 2021 – Mar 2022</span><span class="org">Sprinklr</span><span class="what">Product Analyst · $4M portfolio of 15 accounts across EMEA &amp; APJ</span></li>
+        <li class="reveal"><span class="mono when">2020</span><span class="org">Karlsruhe Institute of Technology<small>Germany</small></span><span class="what">Research intern · startup internationalisation</span></li>
+        <li class="reveal edu"><span class="mono when">2017 – 2021</span><span class="org">IIT Hyderabad<small>India</small></span><span class="what">B.Tech, Mechanical Engineering · Minor in Economics</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><span class="mono">05 / Toolkit</span><h2 class="title">What I <span class="serif">use.</span></h2></div>
+        <p>What I reach for across discovery, delivery and prototyping.</p>
+      </div>
+      <div class="toolkit">
+        <div class="panel reveal"><h3>Product</h3><div class="chips">
+          <span class="chip">Roadmapping</span><span class="chip">PRDs</span><span class="chip">Solution architecture</span><span class="chip">Customer discovery</span><span class="chip">QBRs</span><span class="chip">Figma</span><span class="chip">JIRA</span><span class="chip">Asana</span><span class="chip">SQL</span><span class="chip">Salesforce</span>
+        </div></div>
+        <div class="panel reveal"><h3>AI</h3><div class="chips">
+          <span class="chip">Agentic workflows</span><span class="chip">LLM evaluation</span><span class="chip">Prompt engineering</span><span class="chip">RAG</span><span class="chip">MCP servers</span><span class="chip">ASR / NLP / TTS / STT</span><span class="chip">Voice AI &amp; IVR</span><span class="chip">OCR pipelines</span><span class="chip">RPA</span>
+        </div></div>
+        <div class="panel reveal"><h3>Prototyping</h3><div class="chips">
+          <span class="chip">Claude</span><span class="chip">Lovable</span><span class="chip">ElevenLabs</span><span class="chip">Retell AI</span><span class="chip">LangGraph</span><span class="chip">Python</span><span class="chip">AWS</span>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <span class="mono">06 / Contact</span>
+      <h2>Let's talk <span class="serif">agentic products.</span></h2>
+      <p>AI evals, healthcare AI, or turning a messy workflow into something an agent can do reliably. Always happy to chat.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="mailto:mannkhivasara@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+          mannkhivasara@gmail.com</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/mann-khivasara" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn btn-ghost" href="https://github.com/MkRafa" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Mann Khivasara</span>
+    <span>Bengaluru, India</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Theme toggle
+  document.getElementById('themeBtn').addEventListener('click', function () {
+    var root = document.documentElement;
+    var current = root.getAttribute('data-theme') ||
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    var next = current === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+
+  // Nav border on scroll
+  var nav = document.getElementById('nav');
+  var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  // Reveal on scroll
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>
